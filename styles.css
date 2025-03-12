@@ -5,6 +5,8 @@ body {
   margin: 0;
   padding: 20px;
   position: relative; /* Position relative for the overlay */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 body::before {
@@ -25,10 +27,12 @@ h1 {
   text-align: left; 
   font-size: 2.5em;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 input[type="text"] {
-  width: 30%;
+  width: 60%;
+  max-width: 500px;
   border: none;
   border-bottom: 2px solid #00FF00;
   background-color: transparent;
@@ -104,11 +108,13 @@ li {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  width: 40%;
-  padding: 5px;
-  margin: 2px 0;
+  width: 90%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 5px 0;
   color: white;
   transition: opacity 0.5s ease, transform 0.5s ease;
+  word-break: break-word;
 }
 
 .strike-through {
@@ -148,4 +154,64 @@ li {
     position: relative; /* Position for the checkmark */
     cursor: pointer;
     margin-right: 10px; /* Change cursor to pointer */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  input[type="text"] {
+    width: 80%;
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+
+  li {
+    width: 95%;
+    padding: 8px;
+  }
+
+  button {
+    width: 25px;
+    height: 25px;
+  }
+
+  #addbtn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .custom-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+
+  li {
+    width: 100%;
+    padding: 6px;
+  }
+
+  #resetbtn {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
 }
