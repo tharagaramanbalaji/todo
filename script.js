@@ -28,6 +28,7 @@ function renderTasks(){
 
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
+        li.id = `task-${index}`;
         
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -52,7 +53,6 @@ function renderTasks(){
         delbtn.appendChild(delImg); 
         delbtn.onclick = () => deletetask(index);
 
-        
         li.appendChild(checkbox);
         li.appendChild(taskName);
         li.appendChild(delbtn);
@@ -62,12 +62,17 @@ function renderTasks(){
 
 function deletetask(index) {
     const listItem = document.getElementById(`task-${index}`);
-    listItem.classList.add('fade-out');
-
-    setTimeout(() => {
+    if (listItem) {
+        listItem.classList.add('fade-out');
+        
+        setTimeout(() => {
+            tasks.splice(index, 1);
+            renderTasks();
+        }, 500);
+    } else {
         tasks.splice(index, 1);
         renderTasks();
-    }, 500);
+    }
 }
 
 function completedtask(index) {
