@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <h1 class="fade-in">Add your Tasks</h1>
+    <p id="typewriter"></p>
+
+    <div>
+        <input type="text" id ="task_input" >
+        <button type="button" id="addbtn" onclick="addarray()" autocomplete="off"><img src="plus.png" alt="Add Task" style="width: 30px; height: 30px;"></button>
+        
+    </div>
+
+    <ul id="tasklist">
+        
+    </ul>
+
+    <button type="button" id="resetbtn" onclick="resetarray()">Reset tasks</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
